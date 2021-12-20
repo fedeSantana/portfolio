@@ -35,6 +35,12 @@ export default function Index() {
             <h1 className="banner__title">
               I'm Fede, frontend developer and creative developer
             </h1>
+            <iframe
+              title="Inline Frame Example"
+              width="400"
+              height="400"
+              src="/p5/o_model"
+            ></iframe>
             <p className="banner_description">
               I specialize in rapidly building software companies and web
               applications. I talk about my journey on Twitter, commit code to
@@ -132,8 +138,6 @@ export default function Index() {
           </div>
         </div>
       </div>
-      <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
-      <script src="/p5/o_model?id=p5-container"></script>
     </>
   );
 }

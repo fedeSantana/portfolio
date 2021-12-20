@@ -7,11 +7,13 @@ import {
   Scripts,
   ScrollRestoration,
   useCatch,
+  useMatches,
 } from "remix";
 import type { LinksFunction } from "remix";
 
 import globalStylesUrl from "~/styles/global.css";
 import darkStylesUrl from "~/styles/dark.css";
+import { useEffect } from "react";
 
 // https://remix.run/api/app#links
 export let links: LinksFunction = () => {
@@ -28,11 +30,17 @@ export let links: LinksFunction = () => {
 // https://remix.run/api/conventions#default-export
 // https://remix.run/api/conventions#route-filenames
 export default function App() {
+  const matches = useMatches();
+  const withoutlayout = matches.some((match) => match.handle?.withoutlayout);
   return (
     <Document>
-      <Layout>
+      {withoutlayout ? (
         <Outlet />
-      </Layout>
+      ) : (
+        <Layout>
+          <Outlet />
+        </Layout>
+      )}
     </Document>
   );
 }
