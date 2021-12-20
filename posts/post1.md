@@ -1,5 +1,7 @@
 ---
-title: 90s Mixtape
+title: Fede
+icon: heart
+time: 4
 ---
 
 # 90s Mixtape
